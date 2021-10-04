@@ -82,6 +82,17 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-7 mb-5">
+                    <a href="#"><img src="https://i.ibb.co/h9bptvS/Proyek-Baru-2.png" alt="Image placeholder"
+                            class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
+                            onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                </div>
+            </div>
+        </div>
     </div>
 
     @endsection
