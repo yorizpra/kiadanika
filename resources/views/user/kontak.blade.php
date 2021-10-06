@@ -61,38 +61,38 @@
             </div>
         </div>
 
-        <div class="site-section block-8">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-12 col-lg-7 mb-5">
-                        <a href="#"><img
-                                src="https://i.ibb.co/sK0107K/Kayu-Jati-Belanda-p8ndyupkm7sab9zh0ra70viaoomkpec76iwe9eaqvc.jpg"
-                                alt="Image placeholder" class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
-                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-                    </div>
-                    <div class="col-md-12 col-lg-5 text-center pl-md-5">
-                        <h2>BAGAIMANA KAYU JATI BISA AMAN DIGUNAKAN?
-                        </h2>
-                        <br>
-                        <p align="justify">
-                            Kami telah menambahkan Finishing Beeswax dan Biovarnish Waterbased pada seluruh produk
-                            woodenware, terjamin food grade, sehingga aman digunakan untuk kebutuhan sehari-hari.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row align-items-center">
                 <div class="col-md-12 col-lg-7 mb-5">
-                    <a href="#"><img src="https://i.ibb.co/h9bptvS/Proyek-Baru-2.png" alt="Image placeholder"
-                            class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
+                    <a href="#"><img
+                            src="https://i.ibb.co/sK0107K/Kayu-Jati-Belanda-p8ndyupkm7sab9zh0ra70viaoomkpec76iwe9eaqvc.jpg"
+                            alt="Image placeholder" class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
                             onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                </div>
+                <div class="col-md-12 col-lg-5 text-center pl-md-5">
+                    <h2>BAGAIMANA KAYU JATI BISA AMAN DIGUNAKAN?
+                    </h2>
+                    <br>
+                    <p align="justify">
+                        Kami telah menambahkan Finishing Beeswax dan Biovarnish Waterbased pada seluruh produk
+                        woodenware, terjamin food grade, sehingga aman digunakan untuk kebutuhan sehari-hari.
+                    </p>
                 </div>
             </div>
         </div>
+
     </div>
+
+
+    <div class="row justify-content-center">
+
+        <a href="#"><img src="https://i.ibb.co/h9bptvS/Proyek-Baru-2.png" width="1500" height="100"
+                alt="Image placeholder" class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
+                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+
+    </div>
+
+
 
     @endsection
