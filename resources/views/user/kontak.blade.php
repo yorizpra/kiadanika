@@ -13,17 +13,17 @@
 </div>
 
 <div class="site-section">
-    <div class="site-blocks-cover aos-init aos-animate"
-        style="background-image: url(http://127.0.0.1:8000/shopper/images/hero_1.jpg);" data-aos="fade">
+    <div class="site-blocks-cover aos-init aos-animate" style="background-image: url(images/about/DSC03689.JPG);"
+        data-aos="fade">
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-                    <h1 class="mb-2">UNIK DAN NATURAL
+                    <h1 class="mb-2"><p style="color:brown">UNIK DAN NATURAL</p>
                     </h1>
                     <div class="intro-text text-center text-md-left">
-                        <p class="mb-4">Seluruh produk woodenware kami terbuat dari bahan kayu jati alami, dihadirkan
+                        <p class="mb-4" style="color:brown"><strong>Seluruh produk woodenware kami terbuat dari bahan kayu jati alami, dihadirkan
                             untuk memenuhi kebutuhan sehari-hari, diproduksi dengan penuh ketulusan dari pengrajin lokal
-                            Indonesia. Sempurna menambah keunikan isi rumahmu.
+                            Indonesia. Sempurna menambah keunikan isi rumahmu.</strong>
                         </p>
                         <!-- <p>
                             <a href="http://127.0.0.1:8000/produk" class="btn btn-sm btn-primary">Belanja Sekarang</a>
@@ -53,7 +53,7 @@
 
                     </div>
                     <div class="col-md-12 col-lg-7 mb-5">
-                        <a href="#"><img src="https://i.ibb.co/k61vDfC/jati.jpg" alt="Image placeholder"
+                        <a href="#"><img src="images/about/DSC03073.JPG" alt="Image placeholder"
                                 class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
                                 onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                     </div>
@@ -65,9 +65,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-12 col-lg-7 mb-5">
-                    <a href="#"><img
-                            src="https://i.ibb.co/sK0107K/Kayu-Jati-Belanda-p8ndyupkm7sab9zh0ra70viaoomkpec76iwe9eaqvc.jpg"
-                            alt="Image placeholder" class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
+                    <a href="#"><img src="images/about/DSC03858.JPG" alt="Image placeholder" class="img-fluid rounded"
+                            data-pagespeed-url-hash="2922651310"
                             onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                 </div>
                 <div class="col-md-12 col-lg-5 text-center pl-md-5">
@@ -85,12 +84,19 @@
     </div>
 
 
-    <div class="row justify-content-center">
-
-        <a href="#"><img src="https://i.ibb.co/h9bptvS/Proyek-Baru-2.png" width="1500" height="100"
-                alt="Image placeholder" class="img-fluid rounded" data-pagespeed-url-hash="2922651310"
-                onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
-
+    <div class="site-section">
+        <div class="site-blocks-cover aos-init aos-animate" style="background-image: url(images/about/DSC03721.JPG);"
+            width="1500" data-aos="fade" 
+        </div> 
+            
+        <div class="top-left">AYO DUKUNG PRODUK LOKAL</div>
+        <div class="top-right">
+            Terima kasih telah senantiasa bersama kami untuk mendukung <br>para pengrajin lokal untuk
+            lebih tumbuh dan berkembang.
+        </div>
+        <div class="top-right2">
+            Yuk bangga memakai produk lokal!
+        </div>
     </div>
 
 
