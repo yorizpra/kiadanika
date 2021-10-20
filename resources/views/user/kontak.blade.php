@@ -16,12 +16,12 @@
     <div class="site-blocks-cover aos-init aos-animate" style="background-image: url(images/about/DSC03689.JPG);"
         data-aos="fade">
         <div class="container">
-            <div class="row align-items-start align-items-md-center justify-content-end">
+            <div class="row align-items-start align-items-md-center justify-content-end ">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-                    <h1 class="mb-2"><p style="color:brown">UNIK DAN NATURAL</p>
+                    <h1 class="mb-2"><p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">UNIK DAN NATURAL</p>
                     </h1>
                     <div class="intro-text text-center text-md-left">
-                        <p class="mb-4" style="color:brown"><strong>Seluruh produk woodenware kami terbuat dari bahan kayu jati alami, dihadirkan
+                        <p class="mb-4" style="font-family: 'Young'; font-weight: 300; font-style: normal; color:brown"><strong>Seluruh produk woodenware kami terbuat dari bahan kayu jati alami, dihadirkan
                             untuk memenuhi kebutuhan sehari-hari, diproduksi dengan penuh ketulusan dari pengrajin lokal
                             Indonesia. Sempurna menambah keunikan isi rumahmu.</strong>
                         </p>
@@ -39,14 +39,14 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-12 col-lg-5 text-center pl-md-5">
-                        <h2>SEDIKIT CERITA TENTANG KAYU JATI</h2>
+                        <h2 style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">SEDIKIT CERITA TENTANG KAYU JATI</h2>
                         <br>
-                        <p align="justify">
+                        <p align="justify" style="font-family: 'Young'; font-weight: 300; font-style: normal; color: brown">
                             Kayu jati tergolong kayu dengan kelas awet pertama dibandingkan dengan kayu lainnya.
                             Memiliki daya tahan yang kuat terhadap jamur karena udara lembab atau serangan serangga.
                         </p>
                         <br>
-                        <p align="justify">
+                        <p align="justify" style="font-family: 'Young'; font-weight: 300; font-style: normal; color: brown">
                             Kayu jati juga memiliki daya tahan yang baik terhadap cuaca dan perubahan suhu. Selain itu,
                             karakter serat dan warnanya memiliki ciri khas yang indah.
                         </p>
@@ -70,10 +70,10 @@
                             onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
                 </div>
                 <div class="col-md-12 col-lg-5 text-center pl-md-5">
-                    <h2>BAGAIMANA KAYU JATI BISA AMAN DIGUNAKAN?
+                    <h2 style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">BAGAIMANA KAYU JATI BISA AMAN DIGUNAKAN?
                     </h2>
                     <br>
-                    <p align="justify">
+                    <p align="justify" style="font-family: 'Young'; font-weight: 300; font-style: normal; color: brown">
                         Kami telah menambahkan Finishing Beeswax dan Biovarnish Waterbased pada seluruh produk
                         woodenware, terjamin food grade, sehingga aman digunakan untuk kebutuhan sehari-hari.
                     </p>
@@ -89,12 +89,12 @@
             width="1500" data-aos="fade" 
         </div> 
             
-        <div class="top-left">AYO DUKUNG PRODUK LOKAL</div>
-        <div class="top-right">
+        <div class="top-left" style="font-family: 'Young'; font-weight: 800; font-style: normal; ">AYO DUKUNG PRODUK LOKAL</div>
+        <div class="top-right" style="font-family: 'Young'; font-weight: 800; font-style: normal;">
             Terima kasih telah senantiasa bersama kami untuk mendukung <br>para pengrajin lokal untuk
             lebih tumbuh dan berkembang.
         </div>
-        <div class="top-right2">
+        <div class="top-right2" style="font-family: 'Young'; font-weight: 800; font-style: normal;">
             Yuk bangga memakai produk lokal!
         </div>
     </div>
