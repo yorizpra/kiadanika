@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="{{ asset('shopper') }}/fonts/icomoon/style.css">
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/magnific-popup.css">
@@ -24,8 +23,7 @@
 
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('css') }}/font/font.css">
     <style>
         /* Container holding the image and the text */
@@ -76,7 +74,7 @@
             position: absolute;
             bottom: 80px;
             right: 30px;
-            font-family: Arial, Helvetica, sans-serif ;
+            font-family: Arial, Helvetica, sans-serif;
             color: white;
             font-weight: bold;
         }
@@ -89,7 +87,6 @@
             transform: translate(-50%, -50%);
             font-weight: bold;
         }
-
     </style>
 </head>
 
@@ -111,7 +108,9 @@
 
                         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                             <div class="site-logo">
-                                <a href="index.html" class="js-logo-clone">KIADANIKA</a>
+                                <a href="index.html" class="js-logo-clone" style="color:brown">
+                                    KIADANIKA
+                                </a>
                             </div>
                         </div>
 
@@ -123,13 +122,11 @@
                                         @auth
                                         <li>
                                             <div class="dropdown">
-                                                <a class="dropdown-toggle" id="dropdownMenuButton"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="icon icon-person"></span>
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('user.alamat') }}">Pengaturan Alamat</a>
+                                                    <a class="dropdown-item" href="{{ route('user.alamat') }}">Pengaturan Alamat</a>
                                                     <a class="dropdown-item" href="#">Pengaturan Akun</a>
                                                     <a class="dropdown-item" href="#">
 
@@ -138,8 +135,7 @@
                                                             <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
                                                         </a>
 
-                                                        <form id="logout-form" action="{{ route('logout') }}"
-                                                            method="POST" style="display: none;">
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                             @csrf
                                                         </form>
                                                 </div>
@@ -147,12 +143,12 @@
                                         </li>
                                         <li>
                                             <?php
-                      $user_id = \Auth::user()->id;
-                      $total_keranjang = \DB::table('keranjang')
-                        ->select(DB::raw('count(id) as jumlah'))
-                        ->where('user_id', $user_id)
-                        ->first();
-                      ?>
+                                            $user_id = \Auth::user()->id;
+                                            $total_keranjang = \DB::table('keranjang')
+                                                ->select(DB::raw('count(id) as jumlah'))
+                                                ->where('user_id', $user_id)
+                                                ->first();
+                                            ?>
                                             <a href="{{ route('user.keranjang') }}" class="site-cart">
                                                 <span class="icon icon-add_shopping_cart"></span>
                                                 <span class="count">{{ $total_keranjang->jumlah }}</span>
@@ -160,14 +156,14 @@
                                         </li>
                                         <li>
                                             <?php
-                      $user_id = \Auth::user()->id;
-                      $total_order = \DB::table('order')
-                        ->select(DB::raw('count(id) as jumlah'))
-                        ->where('user_id', $user_id)
-                        ->where('status_order_id', '!=', 5)
-                        ->where('status_order_id', '!=', 6)
-                        ->first();
-                      ?>
+                                            $user_id = \Auth::user()->id;
+                                            $total_order = \DB::table('order')
+                                                ->select(DB::raw('count(id) as jumlah'))
+                                                ->where('user_id', $user_id)
+                                                ->where('status_order_id', '!=', 5)
+                                                ->where('status_order_id', '!=', 6)
+                                                ->first();
+                                            ?>
                                             <a href="{{ route('user.order') }}" class="site-cart">
                                                 <span class="icon icon-shopping_cart"></span>
                                                 <span class="count">{{ $total_order->jumlah }}</span>
@@ -175,8 +171,7 @@
                                         </li>
                                         @else
                                         <div class="dropdown">
-                                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
+                                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="icon icon-person"></span>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -189,8 +184,7 @@
                                         @endauth
                                 </div>
                                 @endif
-                                <li class="d-inline-block d-md-none ml-md-0"><a href="#"
-                                        class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                                <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                             </div>
                             </ul>
                         </div>
@@ -200,19 +194,20 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
                 <div class="container">
                     <ul class="site-menu js-clone-nav d-none d-md-block">
-                        <li class="{{ Request::path() === '/' ? '' : '' }}"><a href="{{ route('home') }}">HOME</a></li>
+                        <li class="{{ Request::path() === '/' ? '' : '' }}"><a href="{{ route('home') }}">
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">HOME</p>
+                            </a></li>
 
                         <li>
                             <div class="dropdown">
-                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <!-- <span class="icon icon-person"></span> --> SHOP
+                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                    <!-- <span class="icon icon-person"></span> -->SHOP
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">WOODENWARE</a>
-                                    <a class="dropdown-item" href="#">KITCHEN</a>
-                                    <a class="dropdown-item" href="#">TOILETRIES</a>
-                                    <a class="dropdown-item" href="#">ACCESSORIES</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WOODENWARE</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KITCHEN</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">TOILETRIES</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">ACCESSORIES</a>
 
                                     <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -228,15 +223,14 @@
 
                         <li>
                             <div class="dropdown">
-                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <!-- <span class="icon icon-person"></span> --> HAMPERS
+                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                    <!-- <span class="icon icon-person"></span> -->HAMPERS
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">WEDDING</a>
-                                    <a class="dropdown-item" href="#">BIRTHDAY</a>
-                                    <a class="dropdown-item" href="#">HARI RAYA</a>
-                                    <a class="dropdown-item" href="#">KIDS</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WEDDING</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">BIRTHDAY</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">HARI RAYA</a>
+                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KIDS</a>
 
                                     <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -252,10 +246,14 @@
 
                         <!-- <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">SHOP</a></li> -->
                         <!-- <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">HAMPERS</a></li> -->
-                        <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
-                                href="{{ route('user.produk') }}">BLOG</a></li>
-                        <li class="{{ Request::path() === 'kontak' ? '' : '' }}"><a href="{{ route('kontak') }}">ABOUT
-                                US</a></li>
+                        <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">BLOG</p>
+                            </a></li>
+                        <li class="{{ Request::path() === 'kontak' ? '' : '' }}"><a href="{{ route('kontak') }}">
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">ABOUT
+                                    US
+                                </p>
+                            </a></li>
                     </ul>
                 </div>
             </nav>
@@ -270,11 +268,13 @@
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="footer-heading mb-4">Tentang Kami</h3>
+                                <h3 class="footer-heading mb-4">
+                                    <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">Tentang Kami</p>
+                                </h3>
                             </div>
                             <div class="col-md-6 col-lg-12">
                                 <strong>
-                                    <p>
+                                    <p style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">
                                         Kia dan Ika datang untuk menghadirkan keunikan secara natural dalam memenuhi
                                         kebutuhan rumah sehari-hari.
                                         Semua produk kami tercipta dari ketulusan para pengrajin lokal Indonesia.
@@ -305,13 +305,12 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <div class="block-5 mb-5">
-                            <h3 class="footer-heading mb-4">Kontak Kami
+                            <h3 class="footer-heading mb-4">
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">Kontak Kami</p>
                                 <a href="https://www.instagram.com/by.kiadanika/">
                                     <button type="button" class="btn btn-outline-danger">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path
-                                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
                                             </path>
                                         </svg>
                                         by.kiadanika
@@ -319,13 +318,17 @@
                                 </a>
                             </h3>
                             <ul class="list-unstyled">
-                                <li class="address">Jalan sukses menuju dunia akhirat</li>
+                                <li class="address">
+                                    <p style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">Jalan sukses menuju dunia akhirat</p>
+                                </li>
                                 <li class="phone">
                                     <a href="tel://23923929210">
-                                        +62 819 1552 1076
+                                        <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">+62 819 1552 1076</p>
                                     </a>
                                 </li>
-                                <li class="email">order@kiadanika.com</li>
+                                <li class="email">
+                                    <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">order@kiadanika.com</p>
+                                </li>
                             </ul>
                         </div>
 
@@ -343,15 +346,12 @@
 
                 <div class="row pt-5 mt-5 text-center">
                     <div class="col-md-12">
-                        <p>
+                        <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script data-cfasync="false"
-                                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                             <script>
                                 document.write(new Date().getFullYear());
-
-                            </script> <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                target="_blank" class="text-primary">Kiadanika</a>
+                            </script> <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Kiadanika</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
