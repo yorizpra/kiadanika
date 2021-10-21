@@ -359,7 +359,7 @@
                             Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script> <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown"><strong>Kiadanika</strong></a>
+                            </script> <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:#E74C3C"><strong>Kiadanika</strong></a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
