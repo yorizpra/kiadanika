@@ -590,13 +590,19 @@ a {
     left: 0;
     font-size: 20px;
     line-height: 1;
-    color: #7971ea; }
+    color: #A52A2A;
+    }
+
+    
   .block-5 ul li.address:before {
     content: "\e8b4"; }
   .block-5 ul li.email:before {
     content: "\f0e0"; }
   .block-5 ul li.phone:before {
     content: "\f095"; }
+  .block-5 ul li.instagram:before {
+    content: "\f16d";
+  }
 
 .block-6 {
   display: block; }
@@ -605,7 +611,8 @@ a {
   .block-6 h3 {
     font-size: 18px; }
   .block-6 p {
-    color: #737b8a; }
+    color: #737b8a;
+    }
 
 .block-7 .form-group {
   position: relative; }
