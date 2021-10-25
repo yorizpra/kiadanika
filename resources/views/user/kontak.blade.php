@@ -16,7 +16,7 @@
 </div>
 
 <div class="site-section">
-    <div class="site-blocks-cover aos-init aos-animate" style="background-image: url(images/about/DSC03689.JPG);" data-aos="fade">
+    <div class="site-blocks-cover aos-init aos-animate" style="background-image: url(images/about/DSC03689.JPG); height: 800px;" >
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end ">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">

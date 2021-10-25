@@ -107,10 +107,12 @@
                         </div>
 
                         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
-                            <div class="site-logo">
-                                <a href="index.html" class="js-logo-clone" style="color:brown">
+                            <div class="centered">
+                                <!-- <a href="index.html" class="js-logo-clone" style="color:brown">
                                     KIADANIKA
-                                </a>
+                                </a> -->
+                                <img src="images/logo/New Logo no background.png" style=" height: 120px;
+                                     width: 205px; position:relative">
                             </div>
                         </div>
 
