@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{{ asset('shopper') }}/fonts/icomoon/style.css">
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/magnific-popup.css">
@@ -23,7 +24,8 @@
 
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('css') }}/font/font.css">
     <style>
         /* Container holding the image and the text */
@@ -87,6 +89,18 @@
             transform: translate(-50%, -50%);
             font-weight: bold;
         }
+
+        .carousel .item {
+            height: 300px;
+        }
+
+        .item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+
     </style>
 </head>
 
@@ -124,11 +138,13 @@
                                         @auth
                                         <li>
                                             <div class="dropdown">
-                                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a class="dropdown-toggle" id="dropdownMenuButton"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="icon icon-person"></span>
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="{{ route('user.alamat') }}">Pengaturan Alamat</a>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('user.alamat') }}">Pengaturan Alamat</a>
                                                     <a class="dropdown-item" href="#">Pengaturan Akun</a>
                                                     <a class="dropdown-item" href="#">
 
@@ -137,7 +153,8 @@
                                                             <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
                                                         </a>
 
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        <form id="logout-form" action="{{ route('logout') }}"
+                                                            method="POST" style="display: none;">
                                                             @csrf
                                                         </form>
                                                 </div>
@@ -173,7 +190,8 @@
                                         </li>
                                         @else
                                         <div class="dropdown">
-                                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
                                                 <span class="icon icon-person"></span>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -186,7 +204,8 @@
                                         @endauth
                                 </div>
                                 @endif
-                                <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                                <li class="d-inline-block d-md-none ml-md-0"><a href="#"
+                                        class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                             </div>
                             </ul>
                         </div>
@@ -197,19 +216,26 @@
                 <div class="container">
                     <ul class="site-menu js-clone-nav d-none d-md-block">
                         <li class="{{ Request::path() === '/' ? '' : '' }}"><a href="{{ route('home') }}">
-                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">HOME</p>
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                    HOME</p>
                             </a></li>
 
                         <li>
                             <div class="dropdown">
-                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"
+                                    style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                                     <!-- <span class="icon icon-person"></span> -->SHOP
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WOODENWARE</a>
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KITCHEN</a>
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">TOILETRIES</a>
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">ACCESSORIES</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WOODENWARE</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KITCHEN</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">TOILETRIES</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">ACCESSORIES</a>
 
                                     <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -225,14 +251,21 @@
 
                         <li>
                             <div class="dropdown">
-                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"
+                                    style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                                     <!-- <span class="icon icon-person"></span> -->HAMPERS
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WEDDING</a>
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">BIRTHDAY</a>
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">HARI RAYA</a>
-                                    <a class="dropdown-item" href="#" style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KIDS</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WEDDING</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">BIRTHDAY</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">HARI
+                                        RAYA</a>
+                                    <a class="dropdown-item" href="#"
+                                        style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KIDS</a>
 
                                     <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -249,10 +282,12 @@
                         <!-- <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">SHOP</a></li> -->
                         <!-- <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">HAMPERS</a></li> -->
                         <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">
-                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">BLOG</p>
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                    BLOG</p>
                             </a></li>
                         <li class="{{ Request::path() === 'kontak' ? '' : '' }}"><a href="{{ route('kontak') }}">
-                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">ABOUT
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                    ABOUT
                                     US
                                 </p>
                             </a></li>
@@ -271,7 +306,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h3 class="footer-heading mb-4">
-                                    <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">Tentang Kami</p>
+                                    <p
+                                        style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                        Tentang Kami</p>
                                 </h3>
                             </div>
                             <div class="col-md-6 col-lg-12">
@@ -308,7 +345,8 @@
                     <div class="col-md-6 col-lg-6">
                         <div class="block-5 mb-5">
                             <h3 class="footer-heading mb-4">
-                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">Kontak Kami</p>
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                    Kontak Kami</p>
                             </h3>
                             <ul class="list-unstyled">
                                 <!-- <li class="instagram">
@@ -328,16 +366,22 @@
                                 </li>
                                 <li class="address">
                                     <a href="https://www.instagram.com/by.kiadanika/">
-                                        <p style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">Jalan sukses menuju dunia akhirat</p>
+                                        <p
+                                            style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">
+                                            Jalan sukses menuju dunia akhirat</p>
                                     </a>
                                 </li>
                                 <li class="phone">
                                     <a href="tel://23923929210">
-                                        <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">+62 819 1552 1076</p>
+                                        <p
+                                            style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                            +62 819 1552 1076</p>
                                     </a>
                                 </li>
                                 <li class="email">
-                                    <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">order@kiadanika.com</p>
+                                    <p
+                                        style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                        order@kiadanika.com</p>
                                 </li>
                             </ul>
                         </div>
@@ -358,10 +402,14 @@
                     <div class="col-md-12">
                         <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            Copyright &copy;<script data-cfasync="false"
+                                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script> <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:#E74C3C"><strong>Kiadanika</strong></a>
+
+                            </script> <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                target="_blank"
+                                style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:#E74C3C"><strong>Kiadanika</strong></a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
