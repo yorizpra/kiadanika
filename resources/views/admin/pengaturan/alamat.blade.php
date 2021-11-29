@@ -56,10 +56,10 @@
                                 <tr>
                                     <th>Alamat Sekarang</th>
                                     <th>:</th>
-                                    <td>{{ $cekalamat->detail }} , {{ $cekalamat->kota }} , {{ $cekalamat->prov }}</td>
+                                    <td>{{ $alamat->detail }} , {{ $alamat->kota }} , {{ $alamat->prov }}</td>
                                 </tr>
                             </table>
-                              <small><a href="{{ route('admin.pengaturan.ubahalamat',['id' =>  $cekalamat->id]) }}">Klik untuk mengubah alamat toko</a></small>
+                              <small><a href="{{ route('admin.pengaturan.ubahalamat',['id' =>  $alamat->id]) }}">Klik untuk mengubah alamat toko</a></small>
                         </div>
                     </div>
                     @endif
