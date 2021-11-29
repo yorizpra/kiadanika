@@ -48,18 +48,22 @@
                         </div>
                     </div>
                     @endif
+
+                    @if($cekalamat > 0)
                     <div class="row">
                         <div class="col-md-12">
                             <table>
                                 <tr>
                                     <th>Alamat Sekarang</th>
                                     <th>:</th>
-                                    <td>{{ $alamat->detail }} , {{ $alamat->kota }} , {{ $alamat->prov }}</td>
+                                    <td>{{ $cekalamat->detail }} , {{ $cekalamat->kota }} , {{ $cekalamat->prov }}</td>
                                 </tr>
                             </table>
-                              <small><a href="{{ route('admin.pengaturan.ubahalamat',['id' =>  $alamat->id]) }}">Klik untuk mengubah alamat toko</a></small>
+                              <small><a href="{{ route('admin.pengaturan.ubahalamat',['id' =>  $cekalamat->id]) }}">Klik untuk mengubah alamat toko</a></small>
                         </div>
                     </div>
+                    @endif
+
                   </div>
                 </div>
               </div>
