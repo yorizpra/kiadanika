@@ -114,7 +114,7 @@
                     <div class="row align-items-center">
 
                         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-                            <form action="{{ route('user.produk.cari') }}" method="get" class="site-block-top-search">
+                            <form action="{{ route('user.produk.cari') }}" method="get" class="site-block-top-search" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                                 @csrf
                                 <span class="icon icon-search2"></span>
                                 <input type="text" class="form-control border-0" name="cari" placeholder="Search">
@@ -141,7 +141,8 @@
                                                 <li>
                                                     <div class="dropdown">
                                                         <a class="dropdown-toggle" id="dropdownMenuButton"
-                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                                                            style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                                                             <span class="icon icon-person"></span>
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -171,7 +172,8 @@
                                                         ->where('user_id', $user_id)
                                                         ->first();
                                                     ?>
-                                                    <a href="{{ route('user.keranjang') }}" class="site-cart">
+                                                    <a href="{{ route('user.keranjang') }}" class="site-cart" 
+                                                    style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                                                         <span class="icon icon-add_shopping_cart"></span>
                                                         <span class="count">{{ $total_keranjang->jumlah }}</span>
                                                     </a>
@@ -187,7 +189,8 @@
                                                         ->where('status_order_id', '!=', 6)
                                                         ->first();
                                                     ?>
-                                                    <a href="{{ route('user.order') }}" class="site-cart">
+                                                    <a href="{{ route('user.order') }}" class="site-cart" 
+                                                    style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                                                         <span class="icon icon-shopping_cart"></span>
                                                         <span class="count">{{ $total_order->jumlah }}</span>
                                                     </a>
