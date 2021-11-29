@@ -108,6 +108,7 @@
 
     <div class="site-wrap">
         <header class="site-navbar" role="banner">
+
             <div class="site-navbar-top">
                 <div class="container">
                     <div class="row align-items-center">
@@ -133,85 +134,96 @@
                         <div class="col-6 col-md-4 order-3 order-md-3 text-right">
                             <div class="top-right links">
                                 <div class="site-top-icons">
+
                                     <ul>
                                         @if (Route::has('login'))
-                                        @auth
-                                        <li>
-                                            <div class="dropdown">
-                                                <a class="dropdown-toggle" id="dropdownMenuButton"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="icon icon-person"></span>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('user.alamat') }}">Pengaturan Alamat</a>
-                                                    <a class="dropdown-item" href="#">Pengaturan Akun</a>
-                                                    <a class="dropdown-item" href="#">
-
-                                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                            <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
+                                            @auth
+                                                <li>
+                                                    <div class="dropdown">
+                                                        <a class="dropdown-toggle" id="dropdownMenuButton"
+                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="icon icon-person"></span>
                                                         </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('user.alamat') }}">Pengaturan Alamat</a>
+                                                            <a class="dropdown-item" href="#">Pengaturan Akun</a>
+                                                            <a class="dropdown-item" href="#">
 
-                                                        <form id="logout-form" action="{{ route('logout') }}"
-                                                            method="POST" style="display: none;">
-                                                            @csrf
-                                                        </form>
+                                                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                    document.getElementById('logout-form').submit();">
+                                                                    <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
+                                                                </a>
+
+                                                                <form id="logout-form" action="{{ route('logout') }}"
+                                                                    method="POST" style="display: none;">
+                                                                    @csrf
+                                                                </form>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <?php
+                                                    $user_id = \Auth::user()->id;
+                                                    $total_keranjang = \DB::table('keranjang')
+                                                        ->select(DB::raw('count(id) as jumlah'))
+                                                        ->where('user_id', $user_id)
+                                                        ->first();
+                                                    ?>
+                                                    <a href="{{ route('user.keranjang') }}" class="site-cart">
+                                                        <span class="icon icon-add_shopping_cart"></span>
+                                                        <span class="count">{{ $total_keranjang->jumlah }}</span>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <?php
+                                                    $user_id = \Auth::user()->id;
+                                                    $total_order = \DB::table('order')
+                                                        ->select(DB::raw('count(id) as jumlah'))
+                                                        ->where('user_id', $user_id)
+                                                        ->where('status_order_id', '!=', 5)
+                                                        ->where('status_order_id', '!=', 6)
+                                                        ->first();
+                                                    ?>
+                                                    <a href="{{ route('user.order') }}" class="site-cart">
+                                                        <span class="icon icon-shopping_cart"></span>
+                                                        <span class="count">{{ $total_order->jumlah }}</span>
+                                                    </a>
+                                                </li>
+                                                
+                                                @else
+                                                <div class="dropdown">
+                                                    <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false"
+                                                        style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                                        <span class="icon icon-person"></span>
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="{{ route('login') }}">Masuk</a>
+                                                        @if (Route::has('register'))
+                                                        <a class="dropdown-item" href="{{ route('register') }}">Daftar</a>
+                                                        @endif
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <?php
-                                            $user_id = \Auth::user()->id;
-                                            $total_keranjang = \DB::table('keranjang')
-                                                ->select(DB::raw('count(id) as jumlah'))
-                                                ->where('user_id', $user_id)
-                                                ->first();
-                                            ?>
-                                            <a href="{{ route('user.keranjang') }}" class="site-cart">
-                                                <span class="icon icon-add_shopping_cart"></span>
-                                                <span class="count">{{ $total_keranjang->jumlah }}</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <?php
-                                            $user_id = \Auth::user()->id;
-                                            $total_order = \DB::table('order')
-                                                ->select(DB::raw('count(id) as jumlah'))
-                                                ->where('user_id', $user_id)
-                                                ->where('status_order_id', '!=', 5)
-                                                ->where('status_order_id', '!=', 6)
-                                                ->first();
-                                            ?>
-                                            <a href="{{ route('user.order') }}" class="site-cart">
-                                                <span class="icon icon-shopping_cart"></span>
-                                                <span class="count">{{ $total_order->jumlah }}</span>
-                                            </a>
-                                        </li>
-                                        @else
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <span class="icon icon-person"></span>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="{{ route('login') }}">Masuk</a>
-                                                @if (Route::has('register'))
-                                                <a class="dropdown-item" href="{{ route('register') }}">Daftar</a>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        @endauth
+                                            @endauth
+                                        @endif
+                                        
+                                        <li class="d-inline-block d-md-none ml-md-0">
+                                            <a href="#"
+                                                class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                                                
+                                    </ul>
+
                                 </div>
-                                @endif
-                                <li class="d-inline-block d-md-none ml-md-0"><a href="#"
-                                        class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                             </div>
-                            </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
+
             <nav class="site-navigation text-right text-md-center" role="navigation">
                 <div class="container">
                     <ul class="site-menu js-clone-nav d-none d-md-block">
@@ -237,14 +249,14 @@
                                     <a class="dropdown-item" href="#"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">ACCESSORIES</a>
 
-                                    <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                    <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
-                  </a>
+                                                            <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                            <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
+                                        </a>
 
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                  </form> -->
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form> -->
                                 </div>
                             </div>
                         </li>
@@ -267,14 +279,14 @@
                                     <a class="dropdown-item" href="#"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KIDS</a>
 
-                                    <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                    <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
-                  </a>
+                                                        <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                        <i class="mdi mdi-logout mr-2 text-primary"></i> Logout
+                                    </a>
 
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                  </form> -->
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form> -->
                                 </div>
                             </div>
                         </li>
@@ -302,6 +314,7 @@
         <footer class="site-footer border-top">
             <div class="container">
                 <div class="row">
+                    
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="row">
                             <div class="col-md-12">
@@ -319,29 +332,30 @@
                                         Semua produk kami tercipta dari ketulusan para pengrajin lokal Indonesia.
                                     </p>
                                 </strong>
-                                <!-- <ul class="list-unstyled">
-                  <li><a href="#">Sell online</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Shopping cart</a></li>
-                  <li><a href="#">Store builder</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">Mobile commerce</a></li>
-                  <li><a href="#">Dropshipping</a></li>
-                  <li><a href="#">Website development</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">Point of sale</a></li>
-                  <li><a href="#">Hardware</a></li>
-                  <li><a href="#">Software</a></li>
-                </ul> -->
+                                                    <!-- <ul class="list-unstyled">
+                                    <li><a href="#">Sell online</a></li>
+                                    <li><a href="#">Features</a></li>
+                                    <li><a href="#">Shopping cart</a></li>
+                                    <li><a href="#">Store builder</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <ul class="list-unstyled">
+                                    <li><a href="#">Mobile commerce</a></li>
+                                    <li><a href="#">Dropshipping</a></li>
+                                    <li><a href="#">Website development</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <ul class="list-unstyled">
+                                    <li><a href="#">Point of sale</a></li>
+                                    <li><a href="#">Hardware</a></li>
+                                    <li><a href="#">Software</a></li>
+                                    </ul> -->
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-md-6 col-lg-6">
                         <div class="block-5 mb-5">
                             <h3 class="footer-heading mb-4">
@@ -386,15 +400,15 @@
                             </ul>
                         </div>
 
-                        <!-- <div class="block-7">
-              <form action="#" method="post">
-                <label for="email_subscribe" class="footer-heading">Subscribe</label>
-                <div class="form-group">
-                  <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-                  <input type="submit" class="btn btn-sm btn-primary" value="Send">
-                </div>
-              </form>
-            </div> -->
+                                        <!-- <div class="block-7">
+                            <form action="#" method="post">
+                                <label for="email_subscribe" class="footer-heading">Subscribe</label>
+                                <div class="form-group">
+                                <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+                                <input type="submit" class="btn btn-sm btn-primary" value="Send">
+                                </div>
+                            </form>
+                            </div> -->
                     </div>
                 </div>
 
@@ -415,63 +429,64 @@
                     </div>
 
                 </div>
+
             </div>
         </footer>
 
 
-        <!-- BATAS ATAS FOOTER BARU -->
-        <?php /* 
-    <footer id="footer" class="footer-wrapper">
+                    <!-- BATAS ATAS FOOTER BARU -->
+                    <?php /* 
+                <footer id="footer" class="footer-wrapper">
 
 
-      <!-- FOOTER 1 -->
+                <!-- FOOTER 1 -->
 
-      <!-- FOOTER 2 -->
-      <div class="footer-widgets footer footer-2 dark">
-        <div class="row dark large-columns-2 mb-0">
+                <!-- FOOTER 2 -->
+                <div class="footer-widgets footer footer-2 dark">
+                    <div class="row dark large-columns-2 mb-0">
 
-          <div id="block_widget-2" class="col pb-0 widget block_widget">
-            <span class="widget-title">Tentang Kami</span>
-            <div class="is-divider small"></div>
-            <p>Dekayu mendukung Para Pengrajin untuk tumbuh dan berinovasi dalam memproduksi produk Kerajinan. Tidak hanya nilai estetikanya saja namun bersama menambahkan nilai fungsi pada produk-produk yang dihasilkan.</p>
-            <div class="social-icons follow-icons"><a href="https://www.facebook.com/dekayujogja/" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon button circle is-outline facebook tooltip tooltipstered"><i class="icon-facebook"></i></a><a href="https://www.instagram.com/dekorasi.kayu" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon button circle is-outline instagram tooltip tooltipstered"><i class="icon-instagram"></i></a><a href="mailto:order@dekayu.id" data-label="E-mail" rel="nofollow" class="icon button circle is-outline email tooltip tooltipstered"><i class="icon-envelop"></i></a><a href="https://youtu.be/eBy_5S23ERA" target="_blank" rel="noopener noreferrer nofollow" data-label="YouTube" class="icon button circle is-outline youtube tooltip tooltipstered"><i class="icon-youtube"></i></a></div>
-          </div>
-          <div id="text-15" class="col pb-0 widget widget_text"><span class="widget-title">Kontak Kami</span>
-            <div class="is-divider small"></div>
-            <div class="textwidget">
-              <p>CV Dekayu Indonesia.</p>
-              <p><a href="https://g.page/dekayu?share">Jl. Mentri Supeno No. 62A, Sorosutan, Umbulharjo, Yogyakarta, 55161</a></p>
-              <p>Buka : Senin-Sabtu Jam 10:00 s.d. 18:00 WIB</p>
-              <p><a href="https://wa.me/6282133009600">WA/HP +62 821-3300-9600</a> | <a href="mailto:order@dekayu.id">Email: order@dekayu.id</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="absolute-footer dark medium-text-center small-text-center">
-        <div class="container clearfix">
+                    <div id="block_widget-2" class="col pb-0 widget block_widget">
+                        <span class="widget-title">Tentang Kami</span>
+                        <div class="is-divider small"></div>
+                        <p>Dekayu mendukung Para Pengrajin untuk tumbuh dan berinovasi dalam memproduksi produk Kerajinan. Tidak hanya nilai estetikanya saja namun bersama menambahkan nilai fungsi pada produk-produk yang dihasilkan.</p>
+                        <div class="social-icons follow-icons"><a href="https://www.facebook.com/dekayujogja/" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon button circle is-outline facebook tooltip tooltipstered"><i class="icon-facebook"></i></a><a href="https://www.instagram.com/dekorasi.kayu" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon button circle is-outline instagram tooltip tooltipstered"><i class="icon-instagram"></i></a><a href="mailto:order@dekayu.id" data-label="E-mail" rel="nofollow" class="icon button circle is-outline email tooltip tooltipstered"><i class="icon-envelop"></i></a><a href="https://youtu.be/eBy_5S23ERA" target="_blank" rel="noopener noreferrer nofollow" data-label="YouTube" class="icon button circle is-outline youtube tooltip tooltipstered"><i class="icon-youtube"></i></a></div>
+                    </div>
+                    <div id="text-15" class="col pb-0 widget widget_text"><span class="widget-title">Kontak Kami</span>
+                        <div class="is-divider small"></div>
+                        <div class="textwidget">
+                        <p>CV Dekayu Indonesia.</p>
+                        <p><a href="https://g.page/dekayu?share">Jl. Mentri Supeno No. 62A, Sorosutan, Umbulharjo, Yogyakarta, 55161</a></p>
+                        <p>Buka : Senin-Sabtu Jam 10:00 s.d. 18:00 WIB</p>
+                        <p><a href="https://wa.me/6282133009600">WA/HP +62 821-3300-9600</a> | <a href="mailto:order@dekayu.id">Email: order@dekayu.id</a></p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
 
-          <div class="footer-primary pull-left">
-            <div class="menu-main-container">
-              <ul id="menu-main-1" class="links footer-nav uppercase">
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-261"><a href="https://dekayu.id/">Beranda</a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-232"><a href="https://dekayu.id/shop/">Produk</a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-393"><a href="https://dekayu.id/hampers/">Gift Hampers</a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://dekayu.id/blog/">Blog</a></li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-91 current_page_item menu-item-has-children menu-item-267"><a href="https://dekayu.id/tentang-kami/" aria-current="page">Tentang Kami</a></li>
-              </ul>
-            </div>
-            <div class="copyright-footer">
-              Copyright 2021 © <strong>Dekayu Indonesia</strong> </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    */ ?>
-        <!-- BATAS BAWAH FOOTER BARU -->
+
+                <div class="absolute-footer dark medium-text-center small-text-center">
+                    <div class="container clearfix">
+
+
+                    <div class="footer-primary pull-left">
+                        <div class="menu-main-container">
+                        <ul id="menu-main-1" class="links footer-nav uppercase">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-261"><a href="https://dekayu.id/">Beranda</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-232"><a href="https://dekayu.id/shop/">Produk</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-393"><a href="https://dekayu.id/hampers/">Gift Hampers</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://dekayu.id/blog/">Blog</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-91 current_page_item menu-item-has-children menu-item-267"><a href="https://dekayu.id/tentang-kami/" aria-current="page">Tentang Kami</a></li>
+                        </ul>
+                        </div>
+                        <div class="copyright-footer">
+                        Copyright 2021 © <strong>Dekayu Indonesia</strong> </div>
+                    </div>
+                    </div>
+                </div>
+                </footer>
+                */ ?>
+                    <!-- BATAS BAWAH FOOTER BARU -->
 
     </div>
 
