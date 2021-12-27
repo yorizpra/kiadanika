@@ -68,32 +68,24 @@
                 <h2>Produk Terlaris</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="nonloop-block-3 owl-carousel">
-                    @foreach($produks as $produk)
-                    <div class="item">
-                        <div class="block-4 text-center">
-                            <a href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}">
-                                <figure class="block-4-image">
-                                    <img src="{{ asset('storage/'.$produk->image) }}" alt="Image placeholder"
-                                        class="img-fluid" width="100%" style="height:300px">
-                                </figure>
-                            </a>
-                            <div class="block-4-text p-4">
-                                <h3><a
-                                        href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}">{{ $produk->name }}</a>
-                                </h3>
-                                <p class="mb-0">{{ $produk->price }}</p>
-                                <a href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}"
-                                    class="btn btn-primary mt-2">Detail</a>
-                            </div>
-                        </div>
+        <div class="row mb-5">
+                @foreach($produks as $produk)
+                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                <div class="block-4 text-center border">
+                    <a href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}">
+                        <img src="{{ asset('storage/' . $produk->image) }}" alt="Image placeholder" class="img-fluid" width="100%" style="height:200px">
+                    </a>
+                    <div class="block-4-text p-4">
+                    <h3><a href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}">{{ $produk->name }}</a></h3>
+                    <p class="mb-0">RP {{ $produk->price }}</p>
+                    <a href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}" class="btn btn-primary mt-2">Detail</a>
                     </div>
-                    @endforeach
                 </div>
+                </div>
+                @endforeach
+                
+    
             </div>
-        </div>
     </div>
 </div>
 @endsection
