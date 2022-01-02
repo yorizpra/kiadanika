@@ -121,6 +121,7 @@
                             </form>
                         </div>
 
+                        
                         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                             <div class="centered">
                                 <!-- <a href="index.html" class="js-logo-clone" style="color:brown">
@@ -130,9 +131,11 @@
                                      width: 205px; position:relative">
                             </div>
                         </div>
+                        
+                        
 
                         <div class="col-6 col-md-4 order-3 order-md-3 text-right">
-                            <div class="top-right links">
+                            <!-- <div class="top-right links"> -->
                                 <div class="site-top-icons">
 
                                     <ul>
@@ -220,8 +223,17 @@
                                     </ul>
 
                                 </div>
-                            </div>
+                            <!-- </div> -->
                         </div>
+
+                        <!-- nyoba benerin icon akun keluar dari tempatnya ketika windowed mode -->
+                        <!-- <div class="site-top-icons">
+                            <form action="{{ route('user.produk.cari') }}" method="get" class="site-block-top-search" style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                @csrf
+                                <span class="icon icon-search2"></span>
+                                <input type="text" class="form-control border-0" name="cari" placeholder="Search">
+                            </form>
+                        </div> -->
 
                     </div>
                 </div>
