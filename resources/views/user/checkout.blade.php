@@ -17,6 +17,17 @@
               <div class="col-md-12">
                 <h2 class="h3 mb-3 text-black">Your Order</h2>
                 <div class="p-3 p-lg-5 border">
+
+                   @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                    @endif
+                
                   <form action="{{ route('user.order.simpan') }}" method="POST">
                     @csrf
                   <table class="table site-block-order-table mb-5">

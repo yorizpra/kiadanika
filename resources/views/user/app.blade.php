@@ -127,7 +127,7 @@
                                 <!-- <a href="index.html" class="js-logo-clone" style="color:brown">
                                     KIADANIKA
                                 </a> -->
-                                <img src="images/logo/New Logo no background.png" style=" height: 120px;
+                                <img src="images/logo/New_Logo_no_background.png" style=" height: 120px;
                                      width: 205px; position:relative">
                             </div>
                         </div>

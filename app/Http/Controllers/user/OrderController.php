@@ -123,6 +123,11 @@ class OrderController extends Controller
 
     public function simpan(Request $request)
     {
+         $this->validate($request,[
+           'no_hp' => 'required|numeric',
+           'pesan' => 'required',
+           'metode_pembayaran' => 'required',
+        ]);
         //untuk menyimpan pesanan ke table order
         $cek_invoice = DB::table('order')->where('invoice',$request->invoice)->count();
         if($cek_invoice < 1){
