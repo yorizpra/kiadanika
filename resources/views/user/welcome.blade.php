@@ -8,13 +8,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="images/home/DSC03725.JPG" alt="First slide">
+            <img class="d-block w-100" src="images/home/a.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/home/IMG_0711.JPG" alt="Second slide">
+            <img class="d-block w-100" src="images/home/b.png" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/home/GreenandKhakiDelicateMedicalLandscapeC-FoldBrochure.png"
+            <img class="d-block w-100" src="images/home/c.jpg"
                 alt="Third slide">
         </div>
     </div>
