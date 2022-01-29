@@ -255,13 +255,13 @@
                                     <!-- <span class="icon icon-person"></span> -->SHOP
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WOODENWARE</a>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KITCHEN</a>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">TOILETRIES</a>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">ACCESSORIES</a>
 
                                                             <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -284,14 +284,14 @@
                                     <!-- <span class="icon icon-person"></span> -->HAMPERS
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">WEDDING</a>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">BIRTHDAY</a>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">HARI
                                         RAYA</a>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item" href="{{ route('user.produk') }}"
                                         style="font-family: 'Butler'; font-weight: 300; font-style: normal; color:brown">KIDS</a>
 
                                                         <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -308,10 +308,10 @@
 
                         <!-- <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">SHOP</a></li> -->
                         <!-- <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">HAMPERS</a></li> -->
-                        <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">
+                        <!-- <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a href="{{ route('user.produk') }}">
                                 <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
-                                    BLOG</p>
-                            </a></li>
+                                    Kategori</p>
+                            </a></li> -->
                         <li class="{{ Request::path() === 'kontak' ? '' : '' }}"><a href="{{ route('kontak') }}">
                                 <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
                                     ABOUT
