@@ -124,11 +124,13 @@
                         
                         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                             <div class="centered">
-                                <!-- <a href="index.html" class="js-logo-clone" style="color:brown">
-                                    KIADANIKA
-                                </a> -->
-                                <img src="images/logo/New_Logo_no_background.png" style=" height: 120px;
-                                     width: 205px; position:relative">
+                                <a href="index.html" class="js-logo-clone" style="color:brown">
+                                    <h2>
+                                        KIA&IKA
+                                    </h2>
+                                </a>
+                                <!-- <img src="images/logo/New Logo no background.png" style=" height: 120px;
+                                     width: 205px; position:relative"> -->
                             </div>
                         </div>
                         
@@ -318,6 +320,11 @@
                                     US
                                 </p>
                             </a></li>
+                        <li class="{{ Request::path() === 'order' ? '' : '' }}"><a href="{{ route('user.order') }}">
+                                <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">
+                                    Pembayaran
+                                </p>
+                        </a></li>
                     </ul>
                 </div>
             </nav>
