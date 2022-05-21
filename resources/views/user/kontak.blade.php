@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0">
-                    <?php /* <a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> */ ?><strong class="text-black">
+                    <?php /* <a href="{{ url('/home') }}">Home</a> <span class="mx-2 mb-0">/</span> */ ?><strong class="text-black">
                         <font size="5">
                             <p style="font-family: 'Butler'; font-weight: bold; font-style: normal; color:brown">ABOUT US</p>
                         </font>

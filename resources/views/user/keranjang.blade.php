@@ -3,7 +3,7 @@
 <div class="bg-light py-3">
     <div class="container">
     <div class="row">
-        <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
+        <div class="col-md-12 mb-0"><a href="{{ url('/home') }}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
     </div>
     </div>
 </div>
@@ -88,17 +88,68 @@
             </div>
 
             <div class="row">
-                @if($cekalamat > 0)
-                <div class="col-md-12">
-                <a href="{{ route('user.checkout') }}" class="btn btn-primary btn-lg py-3 btn-block" >Checkout</a>
-                <small>Jika Merubah Quantity Pada Keranjang Maka Klik Update Keranjang Dulu Sebelum Melakukan Checkout</small>
+
+            <?php /* 
+                <div class="row">
+                    @if($cekalamat > 0)
+                        <div class="col-md-12">
+                            <a href="{{ route('user.checkout') }}" class="btn btn-primary btn-lg py-3 btn-block" >Checkout</a>
+                            <small>Jika Merubah Quantity Pada Keranjang Maka Klik Update Keranjang Dulu Sebelum Melakukan Checkout</small>  
+                        </div>
+                    @else
+                        <div class="col-md-12">
+                            <a href="{{ route('user.alamat') }}" class="btn btn-primary btn-lg py-3 btn-block" >Atur Alamat</a>
+                            <small>Anda Belum Mengatur Alamat</small>
+                        </div>
+                    @endif
                 </div>
-                @else
+
+
+
                 <div class="col-md-12">
-                <a href="{{ route('user.alamat') }}" class="btn btn-primary btn-lg py-3 btn-block" >Atur Alamat</a>
-                <small>Anda Belum Mengatur Alamat</small>
+                    @if($keranjangs->count() < 1)
+                        <a href="{{ route('user.produk') }}" class="btn btn-primary btn-lg py-3 btn-block" >pesan dulu</a>
+                        <small>Jika Merubah Quantity Pada Keranjang Maka Klik Update Keranjang Dulu Sebelum Melakukan Checkout</small>
+                    @endif
+                    @if($cekalamat < 0)
+                        <a href="{{ route('user.alamat') }}" class="btn btn-primary btn-lg py-3 btn-block" >Atur Alamat</a>
+                        <small>Anda Belum Mengatur Alamat</small>                        
+                    @endif
+                    @if($keranjangs->count() > 0 && $cekalamat > 0)
+                        <a href="{{ route('user.checkout') }}" class="btn btn-primary btn-lg py-3 btn-block" >Checkout</a>
+                        <small>Jika Merubah Quantity Pada Keranjang Maka Klik Update Keranjang Dulu Sebelum Melakukan Checkout</small>
+                    @endif
                 </div>
-                @endif
+            
+                    <!-- jika belum ada keranjang maka akan ke halaman produk -->
+                    @if($keranjangs->count() < 1)
+                    <a href="{{ route('user.produk') }}" class="btn btn-primary btn-lg py-3 btn-block" >pesan dulu</a>
+                        <small>Jika Merubah Quantity Pada Keranjang Maka Klik Update Keranjang Dulu Sebelum Melakukan Checkout</small>
+                    @endif
+                    <!-- jika belum ada alamat maka akan ke halaman alamat -->
+                    @if($cekalamat < 1)
+                    <a href="{{ route('user.alamat') }}" class="btn btn-primary btn-lg py-3 btn-block" >Atur Alamat</a>
+                    <small>Anda Belum Mengatur Alamat</small>                        
+                    @endif
+                    */?>
+                    <!-- jika alamat dan keranjang ada maka akan ke checkout -->
+                <div class="col-md-12">
+                    @if($keranjangs->count() > 0 && $cekalamat > 0)
+                        <a href="{{ route('user.checkout') }}" class="btn btn-primary btn-lg py-3 btn-block" >Checkout</a>
+                        <small>Jika Merubah Quantity Pada Keranjang Maka Klik Update Keranjang Dulu Sebelum Melakukan Checkout</small>
+                    @elseif($keranjangs->count() < 1 && $cekalamat < 1)
+                        <a href="{{ route('user.alamat') }}" class="btn btn-primary btn-lg py-3 btn-block" >Atur Alamat</a>
+                        <small>Anda Belum Mengatur Alamat</small> 
+                    @elseif($keranjangs->count() > 0 && $cekalamat < 1)
+                        <a href="{{ route('user.alamat') }}" class="btn btn-primary btn-lg py-3 btn-block" >Atur Alamat</a>
+                        <small>Anda Belum Mengatur Alamat</small> 
+                    @elseif($keranjangs->count() < 1 && $cekalamat > 0)
+                        <a href="{{ route('user.produk') }}" class="btn btn-primary btn-lg py-3 btn-block" >Pesan Dulu</a>
+                        <small>Anda belum memesan apapun, silahkan pesan produk terlebih dahulu</small>
+                    @endif
+                </div>
+             
+                
             </div>
             </div>
         </div>

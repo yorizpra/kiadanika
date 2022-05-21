@@ -124,7 +124,7 @@
                         
                         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                             <div class="centered">
-                                <a href="index.html" class="js-logo-clone" style="color:brown">
+                                <a href="{{ url('/home') }}"" class="js-logo-clone" style="color:brown">
                                     <h2>
                                         KIA&IKA
                                     </h2>
