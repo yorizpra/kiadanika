@@ -30,7 +30,7 @@
                             <th width="5%">No</th>
                             <th>Nama Pelanggan</th>
                             <th>Email</th>
-                            <th>No Rekening</th>
+                            <th>Alamat</th>
                           </tr>
                         </thead>
                         <tbody>
