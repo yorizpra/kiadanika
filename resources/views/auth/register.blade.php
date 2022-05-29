@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>Daftar</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('adminassets') }}/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ asset('adminassets') }}/assets/vendors/css/vendor.bundle.base.css">
@@ -26,10 +26,18 @@
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
-                  <img src="{{ asset('adminassets') }}/assets/images/logo.svg">
+                  <center><div class="">
+                    <div class="centered">
+                        <a href="index.html" class="js-logo-clone" style="color:brown">
+                            <h2>
+                                KIA&IKA
+                            </h2>
+                        </a>
+                    </div>
+                </div></center>
                 </div>
-                <h4>New here?</h4>
-                <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                <center><h4>Daftar Sekarang</h4></center>
+                {{-- <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6> --}}
                 <form class="pt-3" method="POST" action="{{ route('register') }}">
                 @csrf
                   <div class="form-group">
@@ -71,9 +79,9 @@
                     </div>
                   </div>
                   <div class="mt-3">
-                    <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">Daftar</button>
+                    <button style="background-color:rgb(185, 76, 76)" type="submit" class="btn btn-block btn-lg font-weight-medium auth-form-btn"><p style="color: white">Daftar</p></button>
                   </div>
-                  <div class="text-center mt-4 font-weight-light"> Already have an account? <a href="/login" class="text-primary">Login</a>
+                  <div class="text-center mt-4 font-weight-light"> Sudah Punya Akun? <a href="/login" class="text-primary">Login</a>
                   </div>
                 </form>
               </div>
